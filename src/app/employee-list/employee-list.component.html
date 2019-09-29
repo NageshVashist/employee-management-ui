@@ -1,5 +1,8 @@
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-xs-7">
       <app-employee-item *ngFor="let employeeEl of employeeList" [employee]="employeeEl"></app-employee-item>
+  </div>
+  <div class="col-xs-5">
+      <router-outlet></router-outlet>
   </div>
 </div>

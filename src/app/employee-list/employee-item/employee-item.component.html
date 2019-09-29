@@ -1,16 +1,13 @@
-<a style="cursor:pointer;" class="list-group-item clearfix">
+<a style="cursor:pointer;" class="list-group-item clearfix" [routerLink]="[employee.id]" routerLinkActivate="active">
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{employee.firstName}}</h4>
     <p class="list-group-item-text">{{employee.lastName}}</p>
   </div>
   <span class="pull-right">
-    <img *ngIf="employee.gender==='Male'; else female"
-      [src]="'http://res.publicdomainfiles.com/pdf_view/68/13927384215784.png'" alt="" class="img-responsive"
+    <img
+      [src]="employee.imagePath" alt="" class="img-responsive"
       style="max-height:50px">
-    <ng-template #female>
-      <img [src]="'https://publicdomainvectors.org/photos/female-user-icon.png'" alt="" class="img-responsive"
-        style="max-height:50px">
-    </ng-template>
+    
     <p class="list-group-item-text" style="text-align: center">{{employee.id}}</p>
   </span>
 </a>
