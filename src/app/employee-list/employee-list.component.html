@@ -1,8 +1,14 @@
 <div class="row">
-  <div class="col-xs-7">
-      <app-employee-item *ngFor="let employeeEl of employeeList" [employee]="employeeEl"></app-employee-item>
-  </div>
-  <div class="col-xs-5">
-      <router-outlet></router-outlet>
+  <div class="col-xs-12">
+      <button class="btn btn-primary" type="button" (click)="onAddEmployee()">Add Employee</button>
+    <div class="row">
+      <div class="col-xs-7">
+        <br>
+        <app-employee-item *ngFor="let employeeEl of employeeList" [employee]="employeeEl"></app-employee-item>
+      </div>
+      <div class="col-xs-5">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
 </div>

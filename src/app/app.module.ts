@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,8 +11,9 @@ import { EmployeeDetailComponent } from './employee-list/employee-detail/employe
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { DropdownDirective } from './dropdown.directive';
 import { EmployeeDetailEditComponent } from './employee-list/employee-detail-edit/employee-detail-edit.component';
-import { EmployeeDetailNewComponent } from './employee-list/employee-detail-new/employee-detail-new.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataTransport } from './service/data.transport';
+import { EmployeeNotSelectedComponent } from './employee-list/employee-not-selected/employee-not-selected.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,15 +23,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PageNotfoundComponent,
     DropdownDirective,
     EmployeeDetailEditComponent,
-    EmployeeDetailNewComponent
+    EmployeeNotSelectedComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataTransport],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

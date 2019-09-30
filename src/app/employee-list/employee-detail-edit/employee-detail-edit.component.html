@@ -3,7 +3,7 @@
     <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
       <div class="row">
         <div class="col-xs-12">
-          <img [src]="imagePath.value" alt="{{employee.id}}" style="max-height: 200px">
+          <img [src]="imagePath.value"  style="max-height: 200px">
           <br>
         </div>
       </div>
@@ -24,6 +24,14 @@
           </div>
         </div>
       </div>
+      <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="dob">Date Of birth</label>
+              <input type="date" id="dob" class="form-control" formControlName="dateOfBirth">
+            </div>
+          </div>
+        </div>
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
